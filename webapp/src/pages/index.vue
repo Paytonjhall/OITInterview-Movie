@@ -1,5 +1,6 @@
 <template>
 <h1>Movie Search</h1>
+  <h2> Search using the names of movies:</h2>
   <input v-model="text" />
   <div></div>
   <v-btn @click="search()">Search</v-btn>
