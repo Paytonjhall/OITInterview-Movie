@@ -6,6 +6,7 @@
 const key = process.env.MOVIE_KEY
 import axios from 'axios'
 export async function searchMovie(query) {
+    console.log("Key:" + key)
         // Make new promise for async function
         return new Promise(function (resolve, reject) {
             try {
@@ -22,8 +23,9 @@ export async function searchMovie(query) {
                         movies.push({
                             "movie_id": data.results[i].id,
                             "title": data.results[i].title,
+                            "overview": data.results[i].overview,
                             "post_image_url": 'https://image.tmdb.org/t/p/original' + data.results[i].poster_path, //links to tmdb url for picture
-                            "popularity_summary": data.results[i].vote_average + ' out of ' + data.results[i].vote_count
+                            "popularity_summary": data.results[i].vote_average
                         })
                 }
                 // Return array
